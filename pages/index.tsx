@@ -47,7 +47,7 @@ export default function Dashboard() {
     <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-md overflow-hidden transition-transform duration-300 ease-in-out group-hover:scale-110">
       <img
         src="/perbaikan.png"
-        alt="Ikon Peminjaman Kendaraan Dinas"
+        alt="Ikon pemeliharaan perbaikan"
         className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-125"
         loading="lazy"
         aria-hidden="true"
