@@ -42,7 +42,7 @@ export default function CreatedBy() {
               alt="Foto Pengembang 3"
               className="w-28 h-28 rounded-full object-cover shadow-sm"
             />
-            <h3 className="mt-4 font-semibold text-gray-800">Bintang Nugroho</h3>
+            <h3 className="mt-4 font-semibold text-gray-800">Bintang Riansyah Nugroho</h3>
             <p className="text-sm text-gray-500">Mentor</p>
           </article>
         </div>
