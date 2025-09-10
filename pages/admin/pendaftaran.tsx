@@ -251,6 +251,25 @@ export default function PendaftaranPage() {
                               </span>
                             )}
                           </td>
+                          <td className="px-6 py-4 text-sm">
+                          {p.no_hp ? (
+                          <a
+                            href={`https://api.whatsapp.com/send?phone=${p.no_hp.replace(/^0/, "62")}&text=${encodeURIComponent(
+                              `Halo ${p.nama},\n\nSelamat! Pendaftaran magang/PKL kamu telah *diterima* di BBSPJIT.\n\nPeriode: ${formatTanggal(
+                                p.tanggal_start
+                              )} - ${formatTanggal(p.tanggal_end)}\nUnit Kerja: ${p.unit_kerja}\n\nSilakan konfirmasi kehadiranmu.\n\nTerima kasih.`
+                            )}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition"
+                          >
+                            Kirim WA
+                          </a>
+
+                          ) : (
+                            <span className="text-gray-400 italic">No HP tidak ada</span>
+                          )}
+                        </td>
                         </tr>
                       ))}
                     </tbody>

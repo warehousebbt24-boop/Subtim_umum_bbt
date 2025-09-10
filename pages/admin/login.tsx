@@ -42,7 +42,7 @@ export default function AdminLogin() {
     }
 
     setLoading(false);
-    router.push("/admin/dashboard");
+    router.push("/admin/");
   };
 
   return (

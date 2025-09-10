@@ -51,11 +51,11 @@ export default function Login() {
             Selamat Datang di
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-indigo-100">
-              BBSTJ
+              BBSPJIS
             </span>
           </h2>
           <p className="text-lg text-blue-100 leading-relaxed">
-            Balai Besar Standarisasi Jasa Industri Tekstil
+            Balai Besar Standardisasi Dan Pelayanan Jasa Industri Tekstil
           </p>
           <div className="mt-8 w-48 h-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent mx-auto"></div>
         </div>

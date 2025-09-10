@@ -32,7 +32,6 @@ export default async function handler(req: any, res: any) {
     const namaSekolah = fields.nama_sekolah_universitas?.toString() || "";
     const jurusan = fields.jurusan?.toString() || "";
     const noHp = fields.no_hp?.toString() || "";
-    const nomorInduk = fields.nomor_induk?.toString() || "";
     const unitKerja = fields.unit_kerja?.toString() || "";
     const tanggalStart = fields.tanggal_start?.toString() || "";
     const tanggalEnd = fields.tanggal_end?.toString() || "";
@@ -79,7 +78,6 @@ export default async function handler(req: any, res: any) {
         nama_sekolah_universitas: namaSekolah,
         jurusan,
         no_hp: noHp,
-        nomor_induk: nomorInduk,
         unit_kerja: unitKerja,
         tanggal_start: tanggalStart,
         tanggal_end: tanggalEnd,
