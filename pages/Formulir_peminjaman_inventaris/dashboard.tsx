@@ -217,10 +217,11 @@ export default function DashboardPeralatan() {
             className="w-full p-3 border border-gray-300 rounded-lg"
           >
             <option value="">-- Pilih Peralatan --</option>
-            <option value="A">Peralatan A</option>
-            <option value="B">Peralatan B</option>
-            <option value="C">Peralatan C</option>
-            <option value="D">Peralatan D</option>
+            <option value="Soundsystem Portable(1 Unit)">Soundsystem Portable(1 Unit)</option>
+            <option value="Roda Ngangkut Barang (1 Unit)">Roda Ngangkut Barang (1 Unit)</option>
+            <option value="Oxygen Concentrator (Nebulizer) (1 Unit)">Oxygen Concentrator (Nebulizer) (1 Unit)</option>
+            <option value="Soundsystem HUPPER & Mixer Besar (1 Unit)">Soundsystem HUPPER & Mixer Besar (1 Unit)</option>
+            <option value="Kabel Terminal Combinasi (1 Pcs )">Kabel Terminal Combinasi (1 Pcs )</option>
             <option value="lainnya">Lainnya...</option>
           </select>
 
