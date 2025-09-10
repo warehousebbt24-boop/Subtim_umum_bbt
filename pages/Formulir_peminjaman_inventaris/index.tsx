@@ -32,7 +32,7 @@ export default function Home() {
 
         <p className="text-gray-600 text-sm sm:text-base max-w-sm mx-auto">
           Pilih menu di bawah ini untuk mengajukan atau memantau status
-          peminjaman kendaraan secara resmi.
+          peminjaman Inventaris secara resmi.
         </p>
 
         {/* Tombol Aksi */}
