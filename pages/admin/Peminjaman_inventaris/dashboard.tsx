@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../../lib/supabaseClientAnon";
 import { useRouter } from "next/router";
 
+
 export default function DashboardAdminPeralatan() {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);

@@ -20,12 +20,14 @@ const AdminDashboard = () => {
   const [filteredData, setFilteredData] = useState<FormData[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const [openNav, setOpenNav] = useState<string | null>(null); // <-- submenu toggle
+
   const tabs = [
-    { key: 'peminjaman_kendaraan', label: 'Peminjaman Kendaraan' },
-    { key: 'peminjaman_ruangan', label: 'Peminjaman Ruangan' },
-    { key: 'permintaan_pemeliharaan', label: 'Pemeliharaan Sarana' },
-    { key: 'peminjaman_inventaris', label: 'Peminjaman Inventaris' },
-    { key: 'pendaftaran_magang', label: 'Pendaftaran Magang' },
+    { key: '/admin/Peminjaman_kendaraan', label: 'Peminjaman Kendaraan' },
+    { key: '/admin/Peminjaman_ruangan', label: 'Peminjaman Ruangan' },
+    { key: '/admin/Permintaan_pemeliharaan', label: 'Pemeliharaan Sarana' },
+    { key: '/admin/Peminjaman_inventaris', label: 'Peminjaman Inventaris' },
+    
   ];
 
   // Cek login saat halaman dibuka
@@ -223,44 +225,44 @@ const AdminDashboard = () => {
 
         {/* Quick Navigation Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-          <Link href="/admin/Peminjaman_kendaraan/">
-            <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
-              <h3 className="font-bold text-white">Peminjaman Kendaraan</h3>
-              <p className="text-blue-100 text-sm mt-1">Buka data peminjaman kendaraan</p>
-            </div>
-          </Link>
+          {tabs.map((tab) => (
+            <div
+              key={tab.key}
+              onClick={() => setOpenNav(openNav === tab.key ? null : tab.key)}
+              className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center"
+            >
+              <h3 className="font-bold text-white">{tab.label}</h3>
+              <p className="text-blue-100 text-sm mt-1">Buka data {tab.label.toLowerCase()}</p>
 
-          <Link href="/admin/peminjaman_ruangan">
-            <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
-              <h3 className="font-bold text-white">Peminjaman Ruangan</h3>
-              <p className="text-blue-100 text-sm mt-1">Buka data peminjaman ruangan</p>
+              {/* Submenu */}
+              {openNav === tab.key && (
+                <div className="mt-3 space-x-4">
+                  <Link href={`/${tab.key}/dashboard`}>
+                    <span className="inline-block bg-white text-blue-700 px-3 py-1 rounded text-xs font-semibold hover:bg-gray-100 cursor-pointer">
+                      Kelola
+                    </span>
+                  </Link>
+                  <Link href={`/${tab.key}/status`}>
+                    <span className="inline-block bg-white text-blue-700 px-3 py-1 rounded text-xs font-semibold hover:bg-gray-100 cursor-pointer">
+                      Rekap
+                    </span>
+                  </Link>
+                </div>
+              )}
             </div>
-          </Link>
+          ))}
 
-          <Link href="/admin/Permintaan_pemeliharaan/">
+          {/* Card tambahan khusus cleanup */}
+          <Link href="/dashboard">
             <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
-              <h3 className="font-bold text-white">Pemeliharaan Sarana</h3>
-              <p className="text-blue-100 text-sm mt-1">Buka data pemeliharaan sarana</p>
-            </div>
-          </Link>
-
-          <Link href="/admin/Peminjaman_inventaris/">
-            <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
-              <h3 className="font-bold text-white">Peminjaman Inventaris</h3>
-              <p className="text-blue-100 text-sm mt-1">Buka data peminjaman inventaris</p>
-            </div>
-          </Link>
-
-          <Link href="/admin/dashboard">
-            <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
-              <h3 className="font-bold text-white">Pendaftaran Magang</h3>
-              <p className="text-blue-100 text-sm mt-1">Buka dashboardpenerimaan pkl/magang</p>
-            </div>
-          </Link>
-           <Link href="/cleanup_data">
-            <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
-              <h3 className="font-bold text-white">Bersihkan Data rentang 2 tahun</h3>
+              <h3 className="font-bold text-white">Pendaftaran magang</h3>
               <p className="text-blue-100 text-sm mt-1">Buka dashboard formulir</p>
+            </div>
+          </Link>
+          <Link href="/admin/cleanup_data">
+            <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
+              <h3 className="font-bold text-white">Bersihkan Data</h3>
+              <p className="text-blue-100 text-sm mt-1">Bersihkan Data rentang 2 tahun terakhir</p>
             </div>
           </Link>
         </div>

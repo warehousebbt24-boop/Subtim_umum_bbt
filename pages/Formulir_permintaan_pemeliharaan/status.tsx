@@ -67,8 +67,8 @@ export default function UserPermintaanPemeliharaan() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-6 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-6 px-4 sm:px-6">
+      <div className="w-full px-4 sm:px-6">
         {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-800 tracking-tight">

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { supabase } from "../../lib/supabaseClientAnon";
+import { supabase } from "../../../lib/supabaseClientAnon";
+import * as XLSX from "xlsx";
 
 interface Peminjaman {
   id: number;
@@ -17,6 +18,10 @@ interface Peminjaman {
 export default function CekStatus() {
   const [data, setData] = useState<Peminjaman[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedYear, setSelectedYear] = useState<number>(new Date().getFullYear());
+
+  // ambil range 3 tahun kebelakang
+  const years = Array.from({ length: 3 }, (_, i) => new Date().getFullYear() - i);
 
   useEffect(() => {
     const fetchPeminjaman = async () => {
@@ -30,14 +35,18 @@ export default function CekStatus() {
       if (error) {
         console.error("Gagal mengambil data:", error.message);
       } else {
-        setData(data as Peminjaman[]);
+        // filter data sesuai tahun dipilih
+        const filtered = (data as Peminjaman[]).filter(
+          (item) => new Date(item.tanggal_pinjam).getFullYear() === selectedYear
+        );
+        setData(filtered);
       }
 
       setLoading(false);
     };
 
     fetchPeminjaman();
-  }, []);
+  }, [selectedYear]);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -46,7 +55,7 @@ export default function CekStatus() {
       case "pending":
         return "bg-yellow-100 text-yellow-800 border-yellow-200";
       default:
-        return "bg-gray-100 text-gray-600 border-gray-200";
+        return "bg-red-100 text-red-800 border-red-200";
     }
   };
 
@@ -61,9 +70,44 @@ export default function CekStatus() {
     }
   };
 
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(data);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Peminjaman");
+    XLSX.writeFile(workbook, `peminjaman_${selectedYear}.xlsx`);
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-6 px-4 sm:px-6">
-      <div className="w-full px-4 sm:px-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 py-6 px-4 sm:px-6 flex gap-6">
+      {/* Sidebar Tahun */}
+      <div className="w-40 bg-white rounded-2xl shadow-md border border-gray-100 p-4 h-fit">
+        <h3 className="text-sm font-semibold text-gray-700 mb-3">Pilih Tahun</h3>
+        <ul className="space-y-2">
+          {years.map((year) => (
+            <li key={year}>
+              <button
+                onClick={() => setSelectedYear(year)}
+                className={`w-full px-3 py-2 rounded-lg text-sm font-medium transition ${
+                  selectedYear === year
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-50 text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {year}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={downloadExcel}
+          className="mt-6 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-semibold py-2 px-3 rounded-lg"
+        >
+          📥 Unduh Excel
+        </button>
+      </div>
+
+      {/* Konten Utama */}
+      <div className="flex-1">
         {/* Header Section */}
         <div className="text-center mb-8">
           <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-800 tracking-tight">
@@ -109,7 +153,9 @@ export default function CekStatus() {
               />
             </svg>
             <h3 className="mt-4 text-lg font-medium text-gray-800">Belum ada pengajuan</h3>
-            <p className="mt-2 text-gray-500">Anda belum membuat pengajuan peminjaman ruangan.</p>
+            <p className="mt-2 text-gray-500">
+              Tidak ditemukan data peminjaman pada tahun {selectedYear}.
+            </p>
           </div>
         )}
 
