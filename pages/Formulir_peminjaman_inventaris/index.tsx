@@ -42,11 +42,6 @@ export default function Home() {
 
         <p className="text-white/80 text-sm sm:text-base max-w-sm mx-auto leading-relaxed">
           Pilih menu di bawah ini untuk mengajukan atau memantau status
-<<<<<<< HEAD
-          peminjaman Inventaris secara resmi.
-=======
-          peminjaman kendaraan secara resmi dan terintegrasi.
->>>>>>> 168d0d5 (Update: deskripsi perubahan)
         </p>
 
         {/* Tombol Aksi dengan Hover Scale & Glow */}
