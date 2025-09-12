@@ -7,7 +7,7 @@ export default function CreatedBy() {
         <header className="text-center mb-8">
           <h1 className="text-3xl font-extrabold text-gray-800">Created by</h1>
           <p className="text-sm text-gray-500 mt-2 max-w-2xl mx-auto">
-            Halaman ini menampilkan tim pengembang yang membuat <strong>Website Penerimaan Magang</strong> untuk
+            Halaman ini menampilkan tim pengembang yang membuat <strong>Website Formulir Subtim Umum</strong> untuk
             <br /> <em>Balai Besar Standardisasi dan Pelayanan Jasa Industri Tekstil</em> (BBSPJI Tekstil).
           </p>
         </header>
