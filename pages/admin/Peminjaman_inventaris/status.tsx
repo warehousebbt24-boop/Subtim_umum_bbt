@@ -9,6 +9,8 @@ export default function UserPeralatanTahun() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState<string | null>(null);
   const [selectedYear, setSelectedYear] = useState<number>(new Date().getFullYear());
+  const [selectedIds, setSelectedIds] = useState<number[]>([]);
+  const [selectAll, setSelectAll] = useState(false);
 
   // ambil 3 tahun ke belakang
   const years = [0, 1, 2, 3].map((i) => new Date().getFullYear() - i);
@@ -19,6 +21,9 @@ export default function UserPeralatanTahun() {
 
   const fetchData = async (year: number) => {
     setLoading(true);
+    setSelectedIds([]);
+    setSelectAll(false);
+
     const startDate = `${year}-01-01`;
     const endDate = `${year}-12-31`;
 
@@ -66,6 +71,47 @@ export default function UserPeralatanTahun() {
     saveAs(blob, `Peminjaman_Peralatan_${selectedYear}.xlsx`);
   };
 
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedIds([]);
+    } else {
+      setSelectedIds(data.map((item) => item.id));
+    }
+    setSelectAll(!selectAll);
+  };
+
+  const handleSelectRow = (id: number) => {
+    if (selectedIds.includes(id)) {
+      setSelectedIds(selectedIds.filter((sid) => sid !== id));
+    } else {
+      setSelectedIds([...selectedIds, id]);
+    }
+  };
+
+  const handleDeleteSelected = async () => {
+    if (selectedIds.length === 0) {
+      setMessage("❌ Tidak ada data yang dipilih.");
+      return;
+    }
+
+    const { error } = await supabase
+      .from("peminjaman_peralatan")
+      .delete()
+      .in("id", selectedIds);
+
+    if (error) {
+      console.error(error);
+      setMessage("❌ Gagal menghapus data: " + error.message);
+    } else {
+      setMessage(`✅ ${selectedIds.length} data berhasil dihapus.`);
+      setData(data.filter((item) => !selectedIds.includes(item.id)));
+      setSelectedIds([]);
+      setSelectAll(false);
+    }
+
+    setTimeout(() => setMessage(null), 4000);
+  };
+
   const getStatusBadge = (status: string) => {
     switch (status) {
       case "pending":
@@ -99,9 +145,9 @@ export default function UserPeralatanTahun() {
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-blue-50 to-indigo-50">
       {/* Sidebar Tahun */}
-      <div className="w-52 bg-white shadow-md border-r border-gray-100 p-6">
+      <div className="w-60 bg-white shadow-md border-r border-gray-100 p-6 flex flex-col">
         <h2 className="text-lg font-bold mb-4 text-gray-700">Pilih Tahun</h2>
-        <div className="space-y-2">
+        <div className="space-y-2 flex-1">
           {years.map((year) => (
             <button
               key={year}
@@ -116,11 +162,20 @@ export default function UserPeralatanTahun() {
             </button>
           ))}
         </div>
+
         <button
           onClick={exportToExcel}
-          className="mt-6 w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition"
+          className="mt-4 w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-semibold transition"
         >
           Unduh Excel
+        </button>
+
+        <button
+          onClick={handleDeleteSelected}
+          className="mt-2 w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold transition flex items-center justify-center gap-2 disabled:opacity-50"
+          disabled={selectedIds.length === 0}
+        >
+          🗑️ Hapus Terpilih
         </button>
       </div>
 
@@ -175,6 +230,14 @@ export default function UserPeralatanTahun() {
             <table className="min-w-full divide-y divide-gray-100">
               <thead className="bg-gray-50">
                 <tr>
+                  <th className="px-6 py-4">
+                    <input
+                      type="checkbox"
+                      checked={selectAll}
+                      onChange={handleSelectAll}
+                      className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+                    />
+                  </th>
                   {["Nama", "Bagian", "Peralatan", "Pinjam", "Kembali", "Keperluan", "Status"].map(
                     (header, i) => (
                       <th
@@ -190,6 +253,14 @@ export default function UserPeralatanTahun() {
               <tbody className="bg-white divide-y divide-gray-100">
                 {data.map((item) => (
                   <tr key={item.id} className="hover:bg-gray-50 transition duration-150">
+                    <td className="px-6 py-4">
+                      <input
+                        type="checkbox"
+                        checked={selectedIds.includes(item.id)}
+                        onChange={() => handleSelectRow(item.id)}
+                        className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+                      />
+                    </td>
                     <td className="px-6 py-4 text-sm font-medium text-gray-900">{item.nama}</td>
                     <td className="px-6 py-4 text-sm text-gray-700">{item.bagian}</td>
                     <td className="px-6 py-4 text-sm text-gray-700">{item.peralatan}</td>
