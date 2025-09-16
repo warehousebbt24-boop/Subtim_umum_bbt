@@ -25,8 +25,8 @@ const AdminDashboard = () => {
   const tabs = [
     { key: '/admin/Peminjaman_kendaraan', label: 'Peminjaman Kendaraan' },
     { key: '/admin/Permintaan_pemeliharaan', label: 'Pemeliharaan Sarana' },
-    { key: '/admin/Peminjaman_ruangan', label: 'Peminjaman Ruangan' },
-    { key: '/admin/peminjaman_inventaris', label: 'Peminjaman Inventaris' },
+    { key: '/admin/peminjaman_ruangan', label: 'Peminjaman Ruangan' },
+    { key: '/admin/Peminjaman_inventaris', label: 'Peminjaman Inventaris' },
     
   ];
 
