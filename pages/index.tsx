@@ -11,7 +11,7 @@ export default function Dashboard() {
 
  const links = [
   {
-  href: '/Formulir_peminjaman_kendaraaan/',
+  href: '/Formulir_peminjaman_kendaraaan/dashboard',
   icon: (
     <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white shadow-md overflow-hidden transition-transform duration-300 ease-in-out group-hover:scale-110">
       <img
