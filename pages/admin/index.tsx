@@ -253,7 +253,7 @@ const AdminDashboard = () => {
           ))}
 
           {/* Card tambahan khusus cleanup */}
-          <Link href="/dashboard">
+          <Link href="/admin/dashboard">
             <div className="bg-blue-500 hover:bg-blue-400 p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer text-center">
               <h3 className="font-bold text-white">Pendaftaran magang</h3>
               <p className="text-blue-100 text-sm mt-1">Buka dashboard formulir</p>
