@@ -52,7 +52,7 @@ export default function Dashboard() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">
-            abc
+            Formulir Peminjaman Kendaraan
           </h1>
           <p className="text-gray-500 text-sm sm:text-base mt-2 max-w-md mx-auto">
             Isi formulir di bawah ini untuk mengajukan peminjaman kendaraan secara resmi.
