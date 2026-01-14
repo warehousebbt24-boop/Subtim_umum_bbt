@@ -98,7 +98,7 @@ export default function Dashboard() {
               className="w-full p-3 border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-sm"
             >
              <option value="Kepala Bagian Tata Usaha">EAAA</option>
-              <option value="Subtim Humas Data & Informasi Dan Kerjasama Internasional">Subtim Humas Data & Informasi Dan Kerjasama Internasional</option>
+              <option value="Subtim Humas Data & Informasi Dan Kerjasama Internasional">Test</option>
               <option value="Subtim Keuangan Dan Barang Milik Negara">Subtim Keuangan Dan Barang Milik Negara</option>
               <option value="Subtim Kepegawaian">Subtim Kepegawaian</option>
               <option value="Subtim Program Evaluasi Dan Pelaporan">Subtim Program Evaluasi Dan Pelaporan</option>
