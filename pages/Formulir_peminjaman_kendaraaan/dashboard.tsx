@@ -52,7 +52,7 @@ export default function Dashboard() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 tracking-tight">
-            Form Peminjaman Kendaraan
+            abc
           </h1>
           <p className="text-gray-500 text-sm sm:text-base mt-2 max-w-md mx-auto">
             Isi formulir di bawah ini untuk mengajukan peminjaman kendaraan secara resmi.
@@ -97,7 +97,7 @@ export default function Dashboard() {
               onChange={(e) => setBagian(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-sm"
             >
-             <option value="Kepala Bagian Tata Usaha">Kepala Bagian Tata Usaha</option>
+             <option value="Kepala Bagian Tata Usaha">EAAA</option>
               <option value="Subtim Humas Data & Informasi Dan Kerjasama Internasional">Subtim Humas Data & Informasi Dan Kerjasama Internasional</option>
               <option value="Subtim Keuangan Dan Barang Milik Negara">Subtim Keuangan Dan Barang Milik Negara</option>
               <option value="Subtim Kepegawaian">Subtim Kepegawaian</option>
