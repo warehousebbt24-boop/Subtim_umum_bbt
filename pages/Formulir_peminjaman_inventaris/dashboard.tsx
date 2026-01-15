@@ -159,38 +159,15 @@ export default function DashboardPeralatan() {
               required
               className="w-full px-4 py-3.5 border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-800 shadow-sm appearance-none"
             >
-              <option value="Kepala Bagian Tata Usaha">Kepala Bagian Tata Usaha</option>
-              <option value="Subtim Humas Data & Informasi Dan Kerjasama Internasional">Subtim Humas Data & Informasi Dan Kerjasama Internasional</option>
-              <option value="Subtim Keuangan Dan Barang Milik Negara">Subtim Keuangan Dan Barang Milik Negara</option>
-              <option value="Subtim Kepegawaian">Subtim Kepegawaian</option>
-              <option value="Subtim Program Evaluasi Dan Pelaporan">Subtim Program Evaluasi Dan Pelaporan</option>
-              <option value="Subtim Umum">Subtim Umum</option>
-              <option value="Subtim Protokoler Dan Layanan Pimpinan">Subtim Protokoler Dan Layanan Pimpinan</option>
-              <option value="Subtim Integrasi Sistem Manajemen">Subtim Integrasi Sistem Manajemen</option>
-              <option value="KATIM Pengembangan Bisnis Dan Jasa Layanan">KATIM Pengembangan Bisnis Dan Jasa Layanan</option>
-              <option value="Subtim Promosi Dan Pemasaran">Subtim Promosi Dan Pemasaran</option>
-              <option value="Subtim Pelayanan Dan Penanganan Keluhan Pelanggan (ISSC)">Subtim Pelayanan Dan Penanganan Keluhan Pelanggan (ISSC)</option>
-              <option value="Subtim Pengembangan Sistem Operasi Bisnis Dan Layanan BLU">Subtim Pengembangan Sistem Operasi Bisnis Dan Layanan BLU</option>
-              <option value="Subtim Kerjasama Dan Pengembangan Bisnis">Subtim Kerjasama Dan Pengembangan Bisnis</option>
-              <option value="KATIM Pengujian,Kalibrasi,Standardisasi,Inspeksi Teknis Dan Uji Profisiensi">KATIM Pengujian,Kalibrasi,Standardisasi,Inspeksi Teknis Dan Uji Profisiensi</option>
-              <option value="Subtim Pengujian">Subtim Pengujian</option>
-              <option value="Subtim Kalibrasi">Subtim Kalibrasi</option>
-              <option value="Subtim Inspeksi Teknis">Subtim Inspeksi Teknis</option>
-              <option value="Subtim Penyelenggara Uji Profisiensi">Subtim Penyelenggara Uji Profisiensi</option>
-              <option value="Subtim Standardisasi Dan Bahan Acuan">Subtim Standardisasi Dan Bahan Acuan</option>
-              <option value="KATIM Sertifikasi Dan Verifikasi">KATIM Sertifikasi Dan Verifikasi</option>
-              <option value="Subtim Sertifikasi Dan Verifikasi ">Subtim Sertifikasi Dan Verifikasi</option>
-              <option value="Subtim Sertifikasi Industri Hijau">Subtim Sertifikasi Industri Hijau</option>
-              <option value="Subtim Pemeriksa Halal">Subtim Pemeriksa Halal</option>
-              <option value="Subtim Sertifikasi Lingkungan Dan SMK.3">Subtim Sertifikasi Lingkungan Dan SMK.3</option>
-              <option value="Subtim Lembaga Validasi Verifikasi Gasrumah Kaca & Nilai Ekonomi Karbon">Subtim Lembaga Validasi Verifikasi Gasrumah Kaca & Nilai Ekonomi Karbon</option>
-              <option value="Subtim Pengendali Mutu Sertifikasi Dan Verifikasi">Subtim Pengendali Mutu Sertifikasi Dan Verifikasi</option>
-              <option value="KATIM Fasilitasi Optimalisasi Pemanfaatan Teknologi Industri">KATIM Fasilitasi Optimalisasi Pemanfaatan Teknologi Industri</option>
-              <option value="Subtim Fasilitasi Workshop Dan Rancang Bangun">Subtim Fasilitasi Workshop Dan Rancang Bangun</option>
-              <option value="Subtim Bimbingan Dan Konsultasi Teknis">Subtim Bimbingan Dan Konsultasi Teknis</option>
-              <option value="Subtim Optimalisasi Teknologi Industri">Subtim Optimalisasi Teknologi Industri</option>
-              <option value="Subtim Verifikasi TKDN Dan Kemampuan Industri">Subtim Verifikasi TKDN Dan Kemampuan Industri</option>
-              <option value="Subtim Fasilitasi Kemitraan Industri Dan Lembaga Sertifikasi Profesi">Subtim Fasilitasi Kemitraan Industri Dan Lembaga Sertifikasi Profesi</option>
+              <option value="Tim Kerja Sertifikasi">Tim Kerja Sertifikasi</option>
+              <option value="Tim Kerja Verifikasi dan Validasi">Tim Kerja Verifikasi dan Validasi</option>
+              <option value="Tim Kerja Pengujian, Standardisasi dan Inspeksi Teknis">Tim Kerja Pengujian, Standardisasi dan Inspeksi Teknis</option>
+              <option value="Tim Kerja Kalibrasi dan Uji Profesiensi">Tim Kerja Kalibrasi dan Uji Profesiensi</option>
+              <option value="Tim Kerja Optimalisasi Pemanfaatan Teknologi dan Lembaga Sertifikasi Profesi">Tim Kerja Optimalisasi Pemanfaatan Teknologi dan Lembaga Sertifikasi Profesi</option>
+              <option value="Tim Kerja Bimbingan Teknis Konsultansi dan Pendampingan">Tim Kerja Bimbingan Teknis Konsultansi dan Pendampingan</option>
+              <option value="Tim Kerja Pengembangan Bisnis">Tim Kerja Pengembangan Bisnis</option>
+              <option value="Tim Kerja Satuan Pengawas Intern">Tim Kerja Satuan Pengawas Intern</option>
+              <option value="Tim Kerja Bagian Tata Usaha">Tim Kerja Bagian Tata Usaha</option>
             </select>
           </div>
 

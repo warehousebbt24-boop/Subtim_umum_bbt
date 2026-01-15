@@ -97,7 +97,6 @@ export default function Dashboard() {
               onChange={(e) => setBagian(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-sm"
             >
-             <option value="Kepala Bagian Tata Usaha">Kepala Bagian Tata Usaha</option>
               <option value="Tim Kerja Sertifikasi">Tim Kerja Sertifikasi</option>
               <option value="Tim Kerja Verifikasi dan Validasi">Tim Kerja Verifikasi dan Validasi</option>
               <option value="Tim Kerja Pengujian, Standardisasi dan Inspeksi Teknis">Tim Kerja Pengujian, Standardisasi dan Inspeksi Teknis</option>
