@@ -165,6 +165,9 @@ export default function StatusPeminjaman() {
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                               {row.no_pol || "-"}
                             </td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                              {row.Status || "-"}
+                            </td>
                             <td className="px-6 py-4 whitespace-nowrap text-center">
                               <span
                                 className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium border ${status.color}`}
