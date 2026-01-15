@@ -109,8 +109,8 @@ export default function StatusPeminjaman() {
                   <p className="mt-2 text-gray-500">Anda belum membuat permohonan peminjaman kendaraan.</p>
                 </div>
               ) : (
-                <div className="bg-white shadow-xl rounded-2xl border border-gray-200 overflow-hidden">
-                  <table className="min-w-full divide-y divide-gray-200">
+                <div className="bg-white shadow-xl rounded-2xl border border-gray-200 overflow-x-auto">
+                  <table className="min-w-[1100px] divide-y divide-gray-200">
                     <thead className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white">
                       <tr>
                         <th className="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider rounded-tl-lg">
