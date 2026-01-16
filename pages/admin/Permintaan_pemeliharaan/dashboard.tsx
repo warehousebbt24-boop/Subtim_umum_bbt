@@ -148,7 +148,7 @@ export default function AdminPermintaanPemeliharaan() {
                       }`}
                     >
                       <td className="p-4 border-b font-medium text-gray-800 max-w-[190px] whitespace-nowrap overflow-hidden text-ellipsis">{row.nama}</td>
-                      <td className="p-4 border-b text-gray-700 max-w-[210px] whitespace-nowrap overflow-hidden text-ellipsis">{row.bagian}</td>
+                      <td className="p-4 border-b font-medium text-gray-800 max-w-[190px] whitespace-nowrap overflow-hidden text-ellipsis">{row.bagian}</td>
                       <td className="p-4 border-b text-gray-700">{row.jenis}</td>
                       <td className="p-4 border-b text-gray-700 max-w-[210px] whitespace-nowrap overflow-hidden text-ellipsis">
                         <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
