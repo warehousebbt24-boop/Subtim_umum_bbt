@@ -137,8 +137,8 @@ export default function UserPermintaanPemeliharaan() {
         {!loading && data.length > 0 && (
           <>
             <div className="hidden md:block">
-              <div className="bg-white shadow-lg rounded-2xl border border-gray-100 overflow-hidden">
-                <table className="min-w-full divide-y divide-gray-200">
+              <div className="bg-white shadow-lg rounded-2xl border border-gray-100 overflow-x-auto">
+                <table className="min-w-[1100px] divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-4 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
