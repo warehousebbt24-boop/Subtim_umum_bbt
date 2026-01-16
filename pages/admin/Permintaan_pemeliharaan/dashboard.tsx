@@ -129,7 +129,7 @@ export default function AdminPermintaanPemeliharaan() {
               <table className="w-full border-collapse text-sm table-auto">
                 <thead>
                   <tr className="bg-gradient-to-r from-blue-50 to-indigo-50 text-left text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider">
-                    <th className="px-5 py-3 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-lg">Nama</th>
+                    <th className="p-4 border-b">Nama</th>
                     <th className="p-4 border-b">Bagian</th>
                     <th className="p-4 border-b">Jenis</th>
                     <th className="p-4 border-b">Sarana</th>
@@ -147,7 +147,7 @@ export default function AdminPermintaanPemeliharaan() {
                         idx % 2 === 0 ? "bg-white" : "bg-gray-25"
                       }`}
                     >
-                      <td className="p-4 border-b font-medium text-gray-800">{row.nama}</td>
+                      <td className="p-4 border-b font-medium text-gray-800 max-w-[190px] whitespace-nowrap overflow-hidden text-ellipsis">{row.nama}</td>
                       <td className="p-4 border-b text-gray-700">{row.bagian}</td>
                       <td className="p-4 border-b text-gray-700">{row.jenis}</td>
                       <td className="p-4 border-b relative">
