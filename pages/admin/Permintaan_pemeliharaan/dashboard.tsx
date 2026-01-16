@@ -126,7 +126,7 @@ export default function AdminPermintaanPemeliharaan() {
           <>
             {/* Desktop/Tablet Table View */}
             <div className="hidden md:block overflow-x-auto rounded-2xl border border-gray-200 mb-8">
-              <table className="w-full border-collapse text-sm">
+              <table className="w-full border-collapse text-sm table-auto">
                 <thead>
                   <tr className="bg-gradient-to-r from-blue-50 to-indigo-50 text-left text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider">
                     <th className="p-4 border-b">Nama</th>
@@ -166,7 +166,7 @@ export default function AdminPermintaanPemeliharaan() {
                         <select
                           value={row.tindakan || ""}
                           onChange={(e) => handleChange(row.id, e.target.value)}
-                          className="w-full p-2.5 border border-gray-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-300 focus:border-blue-500 transition-all duration-200 shadow-sm"
+                          className="min-w-max whitespace-nowrap p-2.5 border border-gray-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-300 focus:border-blue-500 transition-all duration-200 shadow-sm"
                         >
                           <option value="">- Pilih Tindakan -</option>
                           <option value="Dalam proses perbaikan">Dalam proses perbaikan</option>
