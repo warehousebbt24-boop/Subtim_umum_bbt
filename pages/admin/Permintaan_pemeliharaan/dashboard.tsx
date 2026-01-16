@@ -150,7 +150,7 @@ export default function AdminPermintaanPemeliharaan() {
                       <td className="p-4 border-b font-medium text-gray-800">{row.nama}</td>
                       <td className="p-4 border-b text-gray-700">{row.bagian}</td>
                       <td className="p-4 border-b text-gray-700">{row.jenis}</td>
-                      <td className="p-4 border-b">
+                      <td className="p-4 border-b relative">
                         <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
                           {row.sarana}
                         </span>
@@ -162,11 +162,12 @@ export default function AdminPermintaanPemeliharaan() {
                       <td className="p-4 border-b text-gray-700 max-w-xs truncate" title={row.deskripsi}>
                         {row.deskripsi}
                       </td>
-                      <td className="p-4 border-b">
+                      <td className="p-4 border-b relative">
                         <select
                           value={row.tindakan || ""}
                           onChange={(e) => handleChange(row.id, e.target.value)}
-                          className="min-w-max whitespace-nowrap p-2.5 border border-gray-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-300 focus:border-blue-500 transition-all duration-200 shadow-sm"
+                          className="p-2.5 border border-gray-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-300 focus:border-blue-500 transition-all duration-200 shadow-sm w-full appearance-none"
+                          style={{ width: "max-content", minWidth: "100%" }}
                         >
                           <option value="">- Pilih Tindakan -</option>
                           <option value="Dalam proses perbaikan">Dalam proses perbaikan</option>
