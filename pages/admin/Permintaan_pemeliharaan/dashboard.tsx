@@ -129,7 +129,7 @@ export default function AdminPermintaanPemeliharaan() {
               <table className="w-full border-collapse text-sm table-auto">
                 <thead>
                   <tr className="bg-gradient-to-r from-blue-50 to-indigo-50 text-left text-xs sm:text-sm font-bold text-gray-700 uppercase tracking-wider">
-                    <th className="p-4 border-b">Nama</th>
+                    <th className="px-5 py-3 text-left text-sm font-semibold uppercase tracking-wider rounded-tl-lg">Nama</th>
                     <th className="p-4 border-b">Bagian</th>
                     <th className="p-4 border-b">Jenis</th>
                     <th className="p-4 border-b">Sarana</th>
@@ -151,7 +151,7 @@ export default function AdminPermintaanPemeliharaan() {
                       <td className="p-4 border-b text-gray-700">{row.bagian}</td>
                       <td className="p-4 border-b text-gray-700">{row.jenis}</td>
                       <td className="p-4 border-b relative">
-                        <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
+                        <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
                           {row.sarana}
                         </span>
                       </td>
