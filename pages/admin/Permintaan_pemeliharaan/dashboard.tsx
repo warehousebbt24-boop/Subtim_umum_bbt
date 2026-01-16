@@ -224,7 +224,7 @@ export default function AdminPermintaanPemeliharaan() {
                       <select
                         value={row.tindakan || ""}
                         onChange={(e) => handleChange(row.id, e.target.value)}
-                        className="min-w-max p-2.5 border border-gray-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-300 focus:border-blue-500 transition-all duration-200 shadow-sm"
+                        className="p-2.5 border border-gray-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-blue-300 focus:border-blue-500 transition-all duration-200 shadow-sm"
                       >
                         <option value="">- Pilih Tindakan -</option>
                         <option value="Dalam proses perbaikan">Dalam proses perbaikan</option>
